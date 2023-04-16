@@ -1,0 +1,25 @@
+body,
+.mainContainer,
+.optionsContainer,
+.canvas,
+.row {
+    display: flex;
+}
+
+.canvas {
+    width: 500px;
+    height: 500px;
+    border-style: solid;
+    border-color: black;
+    flex-direction: column;
+}
+
+.pixel {
+    border-style: solid;
+    border-width: 1px;
+    flex: auto;
+}
+
+.row {
+    flex: auto;
+}
