@@ -37,7 +37,22 @@ function initialise(xAcross) {
         pixel.addEventListener('mousemove', function () {
             if (isDrawing) this.style.backgroundColor = colour;
         })
-})
-}
+        pixel.addEventListener('click', function () {
+            this.style.backgroundColor = colour;
+        })
+        })
+        
+        //this bit took ages!!! Mostly copied from stack overflow.
+        canvas.addEventListener("touchmove", function(e) {
+            let touch = e.touches[0];
+            // get the DOM element that the touch is over
+            let element = document.elementFromPoint(touch.clientX, touch.clientY);
+            // make sure the element selected is actually a pixel
+            if (element.classList.contains('pixel')) {
+                element.style.backgroundColor = colour;
+            }
+            
+        });
+    }
 
 initialise(xAcross);

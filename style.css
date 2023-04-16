@@ -2,7 +2,8 @@ body,
 .mainContainer,
 .optionsContainer,
 .canvas,
-.row {
+.row,
+.colourPresets {
     display: flex;
 }
 
@@ -10,13 +11,19 @@ body,
     flex-direction: column;
 }
 
-.canvas {
-    width: 500px;
-    height: 500px;
-    border-style: solid;
-    border-color: black;
-    flex-direction: column;
-}
+    .canvas {
+        width: 500px;
+        height: 500px;
+        border-style: solid;
+        border-color: black;
+        flex-direction: column;
+    }
+
+    .colourPresets {
+        display: flex;
+        flex-wrap: wrap;
+        flex: auto;
+    }
 
 .pixel {
     border-style: solid;
