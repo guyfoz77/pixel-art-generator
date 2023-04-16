@@ -1,4 +1,4 @@
-let xAcross = 10;
+let xAcross = 15;
 
 const canvas = document.querySelector('.canvas');
 const colourPicker = document.querySelector('#colourPicker')
