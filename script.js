@@ -1,6 +1,15 @@
 let xAcross = 10;
 
 const canvas = document.querySelector('.canvas');
+const colourPicker = document.querySelector('#colourPicker')
+
+let colour = 'black'
+let isDrawing = false
+
+colourPicker.addEventListener('input', () => colour = colourPicker.value);
+canvas.addEventListener('mousedown', () => isDrawing = true);
+canvas.addEventListener('mouseup', () => isDrawing = false);
+canvas.addEventListener('mouseleave', () => isDrawing = false);
 
 function createPixel() {
     let pixel = document.createElement('div');
@@ -22,18 +31,13 @@ function initialise(xAcross) {
     for (let i = xAcross; i >= 1; i--) {    
         canvas.appendChild(createRow(xAcross));  //adds rows to the main container.
     }
-//     const pixels = document.querySelectorAll('.pixel');
+    const pixels = document.querySelectorAll('.pixel');
 
-//     pixels.forEach(pixel => {       //adds event listeners to all the pixels to change opacity on mouseover.
-//         pixel.style.opacity = 1;
-//         pixel.addEventListener('mouseover', function () {
-//             if (!rainbowMode) {
-//                 this.style.opacity -= opacityChange;
-//             } else {
-//                 this.style.backgroundColor = getRandomColour();
-//             }
-//         })
-// })
+    pixels.forEach(pixel => {       
+        pixel.addEventListener('mousemove', function () {
+            if (isDrawing) this.style.backgroundColor = colour;
+        })
+})
 }
 
 initialise(xAcross);

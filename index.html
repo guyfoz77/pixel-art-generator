@@ -8,10 +8,14 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
-<body>
+<body onmousedown="event.preventDefault ? event.preventDefault() : event.returnValue = false">
     <div class="mainContainer">
-        <div class="optionsContainer">Options go here</div>
         <div class="canvas"></div>
+
+        <div class="optionsContainer">
+            <h2>Options</h2>
+            <input type="color" name="" id="colourPicker">
+        </div>
     </div>
     
 </body>
