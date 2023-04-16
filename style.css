@@ -1,36 +1,114 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+}
+
 body,
 .mainContainer,
 .optionsContainer,
 .canvas,
 .row,
-.colourPresets {
+.colourPresets,
+.colourOptions {
     display: flex;
 }
 
-.mainContainer {
+html {
+    width: 100%;
+    background-color: #455d7a;
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
     flex-direction: column;
+    flex: auto;
+    margin: 0px;
+}
+
+h2 {
+    font-size: 40px;
+    color: #233142;
+    text-align: center;
+}
+
+.mainContainer {
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    flex: auto;
+    gap: 20px;
 }
 
     .canvas {
-        width: 500px;
-        height: 500px;
+        width: 90%;
+        max-width: 500px;
+        aspect-ratio: 1/1;
         border-style: solid;
         border-color: black;
+        background-color: white;
         flex-direction: column;
+        touch-action: none;
+        flex: auto;
+        box-shadow: 10px 10px #f95959;
     }
 
-    .colourPresets {
-        display: flex;
-        flex-wrap: wrap;
+        .row {
+            flex: auto;
+        }
+
+            .pixel {
+                border-style: solid;
+                border-width: 1px;
+                flex: auto;
+            }
+    
+    .optionsContainer {
+        justify-content: center;
+        align-items: center;
+        background-color: #f95959;
+        border-style: solid;
+        border-radius: 20px;
+        padding: 10px;
         flex: auto;
     }
 
-.pixel {
-    border-style: solid;
-    border-width: 1px;
-    flex: auto;
+        .colourOptions {
+            flex-direction: column;
+        }
+        
+            #colourPicker {
+                width: 100%;
+                height: 100px;
+            }
+
+            .colourPresets {
+                display: flex;
+                flex-wrap: wrap;
+                flex: auto;
+                height: 300px;
+                width: 300px;
+            }
+
+                .colour {
+                    flex: auto;
+                    width: 100px;
+                    height: 100px;
+                }
+
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    font-size: medium;
+    justify-self: flex-end;
+    background-color: #233142;
+    padding: 10px;
 }
 
-.row {
-    flex: auto;
+a,
+p {
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    color: #e3e3e3;
 }

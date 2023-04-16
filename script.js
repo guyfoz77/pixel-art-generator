@@ -3,6 +3,8 @@ let xAcross = 10;
 const canvas = document.querySelector('.canvas');
 const colourPicker = document.querySelector('#colourPicker')
 
+const colours = document.querySelectorAll('.colour');
+
 let colour = 'black'
 let isDrawing = false
 
@@ -10,6 +12,14 @@ colourPicker.addEventListener('input', () => colour = colourPicker.value);
 canvas.addEventListener('mousedown', () => isDrawing = true);
 canvas.addEventListener('mouseup', () => isDrawing = false);
 canvas.addEventListener('mouseleave', () => isDrawing = false);
+
+colours.forEach(selector => {
+    selector.addEventListener('click', function (e) {
+        colour = e.target.dataset.colour;
+        console.log(colour);
+        colourPicker.value = colour;
+    })
+})
 
 function createPixel() {
     let pixel = document.createElement('div');
