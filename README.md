@@ -1,6 +1,8 @@
 # Pixel Art Generator
 
-This software allows a user to create pixel art.
+**Live preview: https://guyfoz77.github.io/pixel-art-generator/**
+
+This software allows a user to create pixel art. This project is a natural evolution of the etch-a-sketch project.
 ---
 
 Click the squares to fill them with the selected colour, and change the colour using the selectors below the main canvas.
